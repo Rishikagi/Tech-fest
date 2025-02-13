@@ -1,0 +1,269 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+div,h1,h2,h3,h4,h5,h6,p,ul,li,p{
+margin: 0;
+padding: 0;
+}
+a{
+color: white;
+text-decoration: none;
+}
+li{
+list-style-type: none;
+}
+
+
+/* nav links start  */
+.my_nav{
+display: flex;
+justify-content: space-around; /* Aligns title and the check button */
+background-color: rgb(41, 40, 40);
+padding: 20px 0;
+align-items: center;
+position: relative; /* Ensures the label and input align properly */
+}
+
+.title{
+display: flex;
+align-items: center;
+}
+
+.links{
+display: flex;
+}
+
+.links li {
+margin: 0 10px;
+position: relative;
+}
+.links li:after {
+background: none repeat scroll 0 0 transparent;
+bottom: 0;
+content: "";
+display: block;
+height: 2px;
+left: 50%;
+position: absolute;
+background: #fff;
+transition: width 0.3s ease 0s, left 0.3s ease 0s;
+width: 0;
+}
+.links li:hover:after {
+width: 100%;
+left: 0;
+}
+
+.registration li a{
+color: #12b9c5;
+border: 2px solid #12b9c5;
+padding: 6px 8px;
+transition: all ease 0.4s;
+}
+.registration li a:hover{
+color: #54c512;
+border: 2px solid #54c512;
+}
+#check:not(:checked) + label:before {
+font-family: "FontAwesome";
+content: "\f0c9"; /* Hamburger icon */
+font-size: 15px;
+color: white;
+}
+
+#check:checked + label:before {
+font-family: "FontAwesome";
+content: "\f00d"; /* Close icon */
+font-size: 15px;
+color: white;
+}
+
+#check,
+.checkbutton {
+display: none;
+}
+@media (max-width: 991.98px) {
+.my_nav {
+justify-content: space-between;
+padding: 20px 20px;
+}
+.title{margin-left: 20px;}
+.checkbutton {
+display: block;
+position: absolute;
+left: 9px;
+line-height: 28px;
+text-align: center;
+color: wheat;
+margin-left: 10px; /* Adds space between the title and the button */
+}
+.links {
+height: 100%;
+width: 70%;
+text-align: left;
+flex-direction: column;
+position: fixed;
+top: 64px;
+left: -100%;
+background-color: rgb(0, 0, 0);
+transition: all ease 0.9s;
+z-index: 100;
+}
+.links li{
+margin: 7px 18px;
+}
+
+#check:checked ~ .links {
+left: 0%;
+}
+}
+
+/* nav links end  */
+
+
+/* main content styling start here  */
+.main {
+min-height: calc(100vh - 44px);
+background-color: #169;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative; /* Needed for pseudo-element positioning */
+}
+
+.main::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: url(./img/tech.jpg);
+background-size: cover; /* Ensures the background image covers the area */
+background-position: center; /* Centers the image */
+opacity: 0.3; /* Adjust opacity for the image */
+z-index: 1; /* Makes sure the image stays behind the content */
+}
+
+.main_content {
+background-color: #ffffff;
+padding: 20px;
+min-height: 80vh;
+width: 80vw;
+opacity: .9; /* Ensure full opacity for content */
+position: relative; /* Allows stacking with z-index */
+z-index: 2; /* Ensures it stays on top of the background */
+}
+@media (max-width: 991.98px) {
+.main_content {
+min-height: 100vh;
+min-width: 100vw;
+}
+}
+/* main content styling end here  */
+
+/* sponsers styling starts here  */
+.sponsers{
+padding: 40px 0;
+}
+.sponser_content{
+min-height: 55vh;
+border: 1px solid black;
+padding: 20px;
+margin-bottom: 10px;
+}
+.sponser_content p{
+text-align: justify;
+}
+.sponser_content a{
+color: black;
+text-decoration: underline;
+}
+/* sponsers styling ends here  */
+
+/* body content start here */
+.my_body{
+min-height: 100vh;
+}
+.guest{
+padding: 20px;
+background-color: #bbd9f3;
+margin: 20px 0;
+}
+.profile{
+background-color: #e5fdce;
+padding: 10px 0;
+}
+.profile_photo img{
+padding: 10px 0;
+}
+/* body content end here */
+/* styling for Contest starts here */
+header {
+    background-color: #1d3557;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+}
+.card{
+    padding: 20px;
+    width: 80%;
+}
+.img-fluid{
+    height: 30rem;
+    width:90rem;
+    
+
+}
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.btn{
+    background-color: #1d3557;;
+}
+
+/* styling for Contest ends here */
+/* styling for about starts here */
+.vol{
+    height: fit-content;
+    width: 20rem;
+    align-items: center;
+   
+
+}
+
+.section-vol{
+    display: flex;
+    margin: 40px;
+    padding: 10px;
+   
+}
+.vol-img{
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+   
+}
+
+/* styling for about ends here */
+/* footer css start  */
+.my_footer{
+color: white;
+background-color: black;
+padding: 10px 0;
+}
+.my_footer a{
+color: white;
+}
+/* footer css end */
+
+
+.contest{
+min-height: calc(100vh - 44px);
+}
